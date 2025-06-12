@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/styles.css">
+        <title>{{ blog.title }}</title>
+    </head>
+
+    <body>
+        <div class="header">
+            <p><a href="/feed.html"><button>Go Back to Feed</button></a></p>
+            <h1>Blog</h1>
+            <a href="/logout.html">logout</a>
+        </div>
+
+        <div class="blog-container">
+            <div class="blog-box">
+                <h3><img src="{{ photo }}" alt="User Image"><a href="/user_blogs/{{ blog.username }}">@{{ blog.username }}</a></h3>
+                <h2>{{ blog.title }}</h2>
+                <p>{{ blog.text }}</p>
+                <small>Posted on: {{ blog.date }}</small>
+            </div>
+
+            <h2>Replies</h2>
+            <div class="blog-container">
+                {% if replies %}
+                    {% for reply in replies|sort(attribute='date') %}
+                        <div class="blog-box">
+                            <h3><img src="{{ reply.photo }}" alt="User Image"><a href="/user_blogs/{{ reply.username }}">@{{ reply.username }}</a></h3>
+                            <p>{{ reply.reply_text }}</p>
+                            <small>Posted on: {{ reply.date }}</small>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No replies yet.</p>
+                {% endif %}
+            </div>
+
+            <h2>Post your reply</h2>
+            <form id="replyForm" action="/add_reply" method="POST">
+                <input type="hidden" name="blogID" value="{{ blog.blogID }}">
+                <textarea name="reply_text" id="reply_text" rows="4" cols="50"></textarea><br>
+                <button type="submit">Reply</button>
+            </form>
+        </div>
+
+        <script src="/static/script.js"></script>
+    </body>
+</html>

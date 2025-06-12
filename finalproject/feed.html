@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/styles.css">
+        <title>Your Feed</title>
+    </head>
+
+    <body>
+        <div class="header">
+            <p><a href="/user_blogs/{{ session.username }}"><button>My Blogs</button></a></p>
+            <h1>For You</h1>
+            <a href="/logout.html">logout</a>
+        </div>
+
+        <div class="blog-container">
+            {% for blog in blogs %}
+            <div class="blog-box">
+                <h3><img src="{{ blog.photo }}" alt="User Image"><a href="/user_blogs/{{ blog.username }}">@{{ blog.username }}</a></h3>
+                <h2>{{ blog.title }}</h2>
+                <p>{{ blog.text }}</p>
+                <small>Posted on: {{ blog.date }}</small>
+                <p><button onclick="window.location.href='/{{ blog.blogID }}/reply';">Comment</button></p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <script src="/static/script.js"></script>
+    </body>
+</html>

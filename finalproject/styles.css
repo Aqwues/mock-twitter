@@ -1,0 +1,281 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    color: #333;
+    background-color: #f4f4f4;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+a {
+    color: 	#708090;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: 	#708090;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="username"],
+textarea {
+    width: 80%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+
+.header {
+    border-radius: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header a {
+    color: white;
+}
+
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+
+.blog-container,
+#blogs,
+#replies {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+.blog-box,
+#replies div {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #eee;
+}
+
+
+.Image img,
+.blog-box img,
+#replies img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#replyForm textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+}
+
+
+
+
+
+
+/*login, signup, forget page*/
+/*login, signup, forget page*/
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 5%
+}
+
+.title {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 0px;
+}
+
+.input-field {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.input-field input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.action-buttons {
+    margin-top: 20px;
+}
+
+.action-button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.action-button:hover {
+    background-color: #555;
+}
+
+
+/*user_blog.html*/
+
+.user_blog_Image img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+     border-radius: 10%;
+}
+
+
+.addblog {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+
+/*body {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+div.Title, div.Text {
+    background-color: #fff;
+    padding: 15px;
+}
+
+input[type="title"] {
+    width: 50%;
+    padding: 8px;
+    margin:5px;
+}
+ input[type="text"]{
+    width: 50%;
+    padding: 8px;
+    height:100px;
+    margin:5px;
+}
+
+button {
+    background-color: #5C67F2;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    font-size:20px;
+}
+
+button:hover {
+    background-color: #434DF5;
+}
+
+
+body {
+    font-family:"Arial";
+    background-color:#eeeeee;
+    width:980px;
+    margin-top:50px;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+.apartment-result {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .image-gallery {
+            display: flex;
+            margin-top: 20px;
+        }
+        .image-gallery div {
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .caption {
+            padding: 5px;
+            text-align: center;
+        }
+*/

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/styles.css">
+        <title>{{ username }}'s Blogs</title>
+    </head>
+
+    <body>
+        <div class="header">
+            <p><a href="/feed.html"><button>Go Back to Feed</button></a></p>
+            <p><a href="/logout.html">Logout</a></p>
+            <h1>{{ username }}'s Blogs</h1>
+            <div class="user_blog_Image">
+                <p><img src="{{ photo }}" alt="User Image"></p>
+            </div>
+        </div>
+        {% if is_owner %}
+            <center>
+                <div class="Upload">
+                    <form id="photo-upload-form" enctype="multipart/form-data" method="post" action="/upload_photo">
+                        <input type="file" name="photo" id="photo-input" accept="image/*">
+                        <button type="submit">Upload Photo</button>
+                    </form>
+                    
+                    <div class="addblog">
+                        <h2>Add Blog</h2>
+                        <div class="Title">
+                            Title <input type="title" id="title">
+                        </div>
+                        <div class="Text">
+                            Text <input type="text" id="text">
+                            <p><button onclick="add_blog();">Add</button></p>
+                        </div>
+                    </div
+                </div>
+            </center>
+        {% endif %}
+        <div class="blog-container">
+            {% if blogs %}
+                {% set sorted_blogs = blogs | sort(attribute='date', reverse=true) %}
+                {% for blog in sorted_blogs %}
+                    <div class="blog-box">
+                        <h2>{{ blog.title }}</h2>
+                        <p>{{ blog.text }}</p>
+                        <small>Posted on: {{ blog.date }}</small>
+                        <p><button onclick="window.location.href='/{{ blog.blogID }}/reply';">Comment</button>
+                        {% if is_owner %}
+                            <button onclick="delete_blog('{{ blog.blogID }}');">Delete</button>
+                        {% endif %}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No blogs found for this user.</p>
+            {% endif %}
+        </div>
+
+        <script src="/static/script.js"></script>
+    </body>
+</html>
